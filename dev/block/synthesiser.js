@@ -247,7 +247,7 @@ registerMachine(BlockID.chemical_synthesiser, {
             }
 
             const slotResult = this.container.getSlot("slotResult");
-            if(slotResult.id !== 0 && slotResult.id !== result.id || slotResult.data !== result.data || slotResult.count + result.count > 64){
+            if(slotResult.id !== 0 && (slotResult.id !== result.id || slotResult.data !== result.data || slotResult.count + result.count > 64)){
                 this.anim.isActive = false;
                 break process;
             }
