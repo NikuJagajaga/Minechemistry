@@ -177,6 +177,14 @@ Callback.addCallback("PreLoaded", function(){
         {id: "Br", weight: 4}
     ], {mode: 2, rolls: 2});
 
+    DecomposeRecipe.add(VanillaItemID.iron_ingot, [
+        {id: "Fe", count: 16}
+    ], {reversible: true});
+
+    DecomposeRecipe.add(VanillaItemID.gold_ingot, [
+        {id: "Au", count: 16}
+    ], {reversible: true});
+
     DecomposeRecipe.addAll([VanillaBlockID.log, VanillaBlockID.log2], [
         MolID.cellulose
     ]);

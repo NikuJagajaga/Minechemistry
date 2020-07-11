@@ -136,9 +136,9 @@ const ElementRegistry = {
         IDRegistry.genItemID("chem_element");
         Item.createItem("chem_element", "element", {name: "chem_element"}, {isTech: true});
         //Item.addCreativeGroup("chem_element", "Elements", [ItemID.chem_element]);
+        Item.setStackedByData(ItemID.chem_element, true);
         
         Item.registerNameOverrideFunction("chem_element", function(item){
-            return "element";
             const data = ElementRegistry.getData(item.data) || {name: "Error"};
             return data.name + " [" + item.data + "]";
         });
