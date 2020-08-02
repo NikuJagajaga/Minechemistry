@@ -123,24 +123,6 @@ const DecomposeRecipe = {
     compileRecipeForRV: function(key){
         const recipe = this.recipe[key];
         const source = this.getItemByCode(key);
-        /*
-        let output;
-        switch(recipe.mode){
-            case this.MODE_NORMAL: 
-                output = recipe.list;
-                break;
-            case this.MODE_RANDOM:
-                output = recipe.list.map(function(item){
-                    return {id: item.id, count: item.weight, data: item.data};
-                });
-                break;
-            case this.MODE_WEIGHTED_RANDOM:
-                output = recipe.list.map(function(item){
-                    return {id: item.id, count: (item.weight / recipe.totalWeight * 1000 | 0) / 10, data: item.data};
-                });
-                break;
-        }
-        */
         return {
             input: [{id: source.id, count: 1, data: source.data}],
             output: recipe.list,

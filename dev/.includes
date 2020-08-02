@@ -8,6 +8,8 @@ item/elements.js
 item/molecules.js
 item/utils.js
 
+recipe_viewer.js
+
 block/decomposer.js
 block/synthesiser.js
 block/fission.js

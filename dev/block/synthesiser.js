@@ -81,6 +81,11 @@ let windowSynthesiser;
                     }
                 }
             }
+        }},
+        arrow: {type: "image", x: 770, y: 118, bitmap: "minechemistry.triangle_right", scale: 3, clicker: {
+            onClick: function(container){
+                RV && RV.openRecipePage("chemical_synthesiser", container);
+            }
         }}
     };
 
@@ -138,8 +143,7 @@ let windowSynthesiser;
         },
         drawing: [
             {type: "frame", x: 400, y: 50, width: 54, height: 186, bitmap: "classic_frame_slot", scale: 3},
-            {type: "bitmap", x: 648, y: 240, bitmap: "minechemistry.triangle_up", scale: 3},
-            {type: "bitmap", x: 770, y: 118, bitmap: "minechemistry.triangle_right", scale: 3}
+            {type: "bitmap", x: 648, y: 240, bitmap: "minechemistry.triangle_up", scale: 3}
         ],
         elements: elements
     });
@@ -218,6 +222,10 @@ registerMachine(BlockID.chemical_synthesiser, {
         result?
             this.container.setSlot("slotTarget", result.id, result.count, result.data):
             this.container.clearSlot("slotTarget");
+    },
+
+    onMoveItems: function(){
+        this.updateTarget();
     },
 
     clearTarget: function(){

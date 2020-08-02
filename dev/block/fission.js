@@ -19,12 +19,16 @@ const windowFission = new UI.StandartWindow({
         background: {standart: true}
     },
     drawing: [
-        {type: "frame", x: 400, y: 50, width: 54, height: 186, bitmap: "classic_frame_slot", scale: 3},
-        {type: "bitmap", x: 608, y: 126, bitmap: "minechemistry.progress_bg", scale: 3}
+        {type: "frame", x: 400, y: 50, width: 54, height: 186, bitmap: "classic_frame_slot", scale: 3}
     ],
     elements: {
         scaleEnergy: {type: "scale", x: 403, y: 53, bitmap: "minechemistry.energy", scale: 3, direction: 1},
-        scaleProgress: {type: "scale", x: 608, y: 126, bitmap: "minechemistry.progress", scale: 3},
+        scaleProgress: {type: "scale", x: 608, y: 126, z: 1, bitmap: "minechemistry.progress", scale: 3},
+        backProgress: {type: "image", x: 608, y: 126, bitmap: "minechemistry.progress_bg", scale: 3, clicker: {
+            onClick: function(container){
+                RV && RV.openRecipePage("chemical_fission", container);
+            }
+        }},
         slotSource: {type: "slot", x: 540, y: 110, isValid: ValidFunc.element},
         slotResult1: {type: "slot", x: 700, y: 110, isValid: ValidFunc.output},
         slotResult2: {type: "slot", x: 760, y: 110, isValid: ValidFunc.output}

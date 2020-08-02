@@ -56,6 +56,11 @@ let windowDecomposer;
                     }
                 }
             }
+        }},
+        arrow: {type: "image", x: 645, y: 120, bitmap: "minechemistry.arrow_down", scale: 3, clicker: {
+            onClick: function(container){
+                RV && RV.openRecipePage("chemical_decomposer", container);
+            }
         }}
     };
 
@@ -76,8 +81,7 @@ let windowDecomposer;
         },
         drawing: [
             {type: "frame", x: 400, y: 50, width: 54, height: 186, bitmap: "classic_frame_slot", scale: 3},
-            {type: "frame", x: 560, y: 50, width: 48, height: 111, bitmap: "classic_frame_slot", scale: 3},
-            {type: "bitmap", x: 645, y: 120, bitmap: "minechemistry.arrow_down", scale: 3}
+            {type: "frame", x: 560, y: 50, width: 48, height: 111, bitmap: "classic_frame_slot", scale: 3}
         ],
         elements: elements
     });
